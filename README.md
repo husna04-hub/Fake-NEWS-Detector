@@ -5,15 +5,15 @@ End-to-end fake news detection system comparing three
 approaches from classical ML to state-of-the-art Transformers.
 
 ## Results
-| Model                    | Accuracy |
-|--------------------------|----------|
-| TF-IDF + Logistic Reg.   | 98.52%   |
-| DistilBERT (fine-tuned)  | XX.XX%   |
+| Model                  | Test Accuracy | Real Headlines | Notes                    |
+|------------------------|---------------|----------------|--------------------------|
+| TF-IDF + Log. Reg.     | 98.52%        | ❌ Fails       | Learned dataset shortcuts|
+| DistilBERT (fine-tuned)| 94.60%        | ✅ Works       | Generalizes correctly    |
 
-## Key Findings
-- Discovered and fixed data leakage (Reuters dateline bias)
-- TF-IDF learned journalistic vs sensational language patterns
-- DistilBERT handles short/ambiguous headlines better
+## Key Insight
+Higher benchmark accuracy ≠ better real-world model.
+TF-IDF learned source formatting patterns (Reuters dateline).
+DistilBERT learned actual linguistic patterns of fake vs real news.
 
 ## Tech Stack
 Python, Scikit-learn, HuggingFace Transformers,
